@@ -197,7 +197,8 @@ class SoapServiceBase(object):
             wsaSchemaNode = create_xml_subelement(types, "schema")
             wsaSchemaNode.set("targetNamespace", tns+'Callback')
             wsaSchemaNode.set("xmlns", "http://www.w3.org/2001/XMLSchema")
-
+            wsaSchemaNode.set("elementFormDefault", "qualified")
+            
             importNode = create_xml_subelement(wsaSchemaNode, "import")
             importNode.set("namespace",
                 "http://schemas.xmlsoap.org/ws/2003/03/addressing")
